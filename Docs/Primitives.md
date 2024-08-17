@@ -11,16 +11,22 @@ The `code` primitive is used to store any and all forms of code.
 	add_treasury(500)
 }
 ```
+
 The `modifier` primitive is used to store modifiers
 ```
 {
 	global_tax_modifier = 20%
 }
 ```
+
 The `object` primitive
+
 The `list<T>` primitive
+
 The `dict<T>` primitive
+
 The `string` primitive
+
 The `enum` primitive
 ```
 {
@@ -28,13 +34,16 @@ The `enum` primitive
 	trigger
 }
 ```
+
 The `null` primitive
+
 The `struct` primitive is used to define the structure of an object
 ```
 {
 	string tag
 }
 ```
+
 The `class` primitive allows you to define named global variables
 ```
 new class country = {
@@ -51,6 +60,7 @@ new class country = {
 	}
 }
 ```
+
 The `function` primitive allows you to create pieces of code that can be reused with arguments.
 ```
 new function add_treasury = {
