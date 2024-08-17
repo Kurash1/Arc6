@@ -5,12 +5,15 @@ In Arc6, functions are a key feature that allows you to define reusable blocks o
 To define a function in Arc6, you use the new function syntax. Here's the general structure:
 ```
 new function <function_name> = {
-  args = <argument_types>
-  <function_body>
+	type = <function_type>
+	args = <argument_type>
+	<function_body>
 }
 ```
 
 `<function_name>`: The name of the function.
+
+`<function_type>`: The type of function, this is defined by the `function_types` enum.
 
 `<argument_types>`: The types of arguments the function accepts, specified as a list of types.
 
@@ -19,11 +22,12 @@ new function <function_name> = {
 Example:
 ```
 new function add_treasury = {
-  args = int
-  add_treasury = args
+	type = effect
+	args = int
+	add_treasury = args
 }
 ```
-This defines a function `add_treasury` that takes a single integer argument and transpiles into `add_treasury = x`
+This defines a function `add_treasury` that takes a single integer argument. If args is 500, then calling the function results in `add_treasury = 500`.
 
 # Calling a Function
 
@@ -40,3 +44,32 @@ which would transpile into
 ```
 add_treasury = 500
 ```
+
+# Practical Example
+
+Let’s put this into practice with a more detailed example.
+
+Function Definition:
+```
+new function conditional_effect = {
+	type = effect
+	args = {
+		tooltip = string
+		trigger = trigger
+		effect = effect
+	}
+
+	if [args:trigger] {
+		new_custom_tooltip = "£yes£If {args:tooltip}"
+		args:effect
+	}
+	else {
+		new_custom_tooltip = "£no£If {args:tooltip}"
+		tooltip = {
+			args:effect
+		}
+	}
+}
+```
+
+This function `conditional_effect` takes three arguments: a tooltip, a trigger, and an effect. In game it shows a tooltip that allows players to see what effect they would get if the fulfill the trigger, with a yes/no icon to show whether they fulfill it.
