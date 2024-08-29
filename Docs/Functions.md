@@ -49,13 +49,13 @@ Function Definition:
 ```
 func effect conditional_effect(tooltip: string, trigger: trigger, effect: effect) {
 	if [args:trigger] {
-		new_custom_tooltip = "£yes£If {args:tooltip}"
-		args:effect
+		new_custom_tooltip("£yes£If {args:tooltip}")
+		effect
 	}
 	else {
-		new_custom_tooltip = "£no£If {args:tooltip}"
-		tooltip = {
-			args:effect
+		new_custom_tooltip("£no£If {args:tooltip}")
+		tooltip -> {
+			effect
 		}
 	}
 }
