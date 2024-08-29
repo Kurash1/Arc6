@@ -18,7 +18,7 @@ The `code` primitive is used to store any and all forms of code. `trigger` and `
 The `modifier` primitive is used to store modifiers
 ```
 {
-	global_tax_modifier = 20%
+	global_tax_modifier: 20%
 }
 ```
 
