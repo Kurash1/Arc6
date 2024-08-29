@@ -4,30 +4,26 @@ In Arc6, functions are a key feature that allows you to define reusable blocks o
 
 To define a function in Arc6, you use the new function syntax. Here's the general structure:
 ```
-new function <function_name> = {
-	type = <function_type>
-	args = <argument_type>
+func <return type> <function_name>(<arguments>) {
 	<function_body>
 }
 ```
 
-`<function_name>`: The name of the function.
+`<return type>`: What should the function return.
 
-`<function_type>`: The type of function, this is defined by the `function_types` enum.
+`<function_name>`: The name of the function. This is what you will use to call the function.
 
-`<argument_types>`: The types of arguments the function accepts, specified as a list of types.
+`<arguments>`: The arguments of the function.
 
 `<function_body>`: The code to be executed when the function is called, using the provided arguments.
 
 Example:
 ```
-new function add_treasury = {
-	type = effect
-	args = int
-	add_treasury = args
+effect add_treasury(money: int) {
+	add_treasury = money
 }
 ```
-This defines a function `add_treasury` that takes a single integer argument. If args is 500, then calling the function results in `add_treasury = 500`.
+This defines a function `add_treasury` that takes a single integer argument. If money is 500, then calling the function results in `add_treasury = 500`.
 
 # Calling a Function
 
@@ -51,14 +47,7 @@ Let’s put this into practice with a more detailed example.
 
 Function Definition:
 ```
-new function conditional_effect = {
-	type = effect
-	args = {
-		tooltip = string
-		trigger = trigger
-		effect = effect
-	}
-
+func effect conditional_effect(tooltip: string, trigger: trigger, effect: effect) {
 	if [args:trigger] {
 		new_custom_tooltip = "£yes£If {args:tooltip}"
 		args:effect
