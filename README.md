@@ -31,8 +31,8 @@ Arc6 is not intended to be used as a standalone language but as a foundational t
 ### Installation
 
 1. **Build or download the Arc6 compiler:**
-   - Detailed build instructions can be found in the [Build Guide](./docs/Build_Guide.md).
-   - Alternatively, download a pre-built version from the [releases page](link-to-releases).
+   - Detailed build instructions can be found in the [Build Guide]().
+   - Alternatively, download a pre-built version from the [releases page]().
 
 2. **Create an `Arc.Defines` file**  
    Instructions can be found in the [Defines Guide](./Docs/Defines.md).
@@ -47,15 +47,14 @@ Arc6 is not intended to be used as a standalone language but as a foundational t
 
 ## Documentation
 
-- [**Language Specification**](./docs/Language_Specification.md): Comprehensive guide to Arc6 syntax and semantics.
-- [**Compile-Time Operations**](./docs/Compile_Time_Operations.md): Details on the powerful compile-time features unique to Arc6.
-- [**Paradox Game Integration**](./docs/Paradox_Game_Integration.md): Instructions for using Arc6 with various Paradox games.
-- [**Framework Development**](./docs/Framework_Development.md): How to create frameworks like Valley using Arc6.
+- [**Language Specification**](): Comprehensive guide to Arc6 syntax and semantics.
+- [**Compile-Time Operations**](): Details on the powerful compile-time features unique to Arc6.
+- [**Paradox Game Integration**](): Instructions for using Arc6 with various Paradox games.
+- [**Framework Development**](): How to create frameworks like Valley using Arc6.
 
 ## Contributing
 
-Contributions to Arc6 are welcome! Please read our [Contributing Guide](./CONTRIBUTING.md) to get started.
+Contributions to Arc6 are welcome! Please read our [Contributing Guide]() to get started.
 
 ## License
 
-Arc6 is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
