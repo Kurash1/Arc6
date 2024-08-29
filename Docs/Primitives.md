@@ -8,7 +8,7 @@ Arc6 has 3 number primitives:
   
 `boolean` for yes(1) no(0) states.
 
-The `code` primitive is used to store any and all forms of code.
+The `code` primitive is used to store any and all forms of code. `trigger` and `effect` are aliases for the `code` primitive.
 ```
 {
 	add_treasury(500)
