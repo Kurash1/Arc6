@@ -35,7 +35,7 @@ Arc6 is not intended to be used as a standalone language but as a foundational t
    - Alternatively, download a pre-built version from the [releases page](link-to-releases).
 
 2. **Create an `Arc.Defines` file**  
-   Instructions can be found in the [Defines Guide](./docs/Defines.md).
+   Instructions can be found in the [Defines Guide](./Docs/Defines.md).
 
 3. **Compile your Arc6 project** by running the following command:
 
