@@ -2,16 +2,16 @@ Arc.defines is a special file that tells the Arc6 compiler how to handle your mo
 
 Example:
 ```
-function_types = {
+function_types: {
 	effect
 	trigger
 }
-load_order = {
+load_order: {
 	valley/*
 	src/*
 }
-external_dlls = {}
-target_directory = target
+external_dlls: {}
+target_directory: target
 ```
 Components of `Arc.defines`:
 
