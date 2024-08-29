@@ -19,7 +19,7 @@ func <return type> <function_name>(<arguments>) {
 
 Example:
 ```
-effect add_treasury(money: int) {
+func effect add_treasury(money: int) {
 	add_treasury = money
 }
 ```
