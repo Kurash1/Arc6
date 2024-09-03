@@ -35,7 +35,9 @@ Arc6 is not intended to be used as a standalone language but as a foundational t
 ### Learning Arc6
 
 [**Overview of Arc6**]()
+
 [**Frequently Asked Questions (FAQ)**]()
+
 [**Discord**](https://discord.gg/xJpu8dgBC9)
 
 ## Contributing
