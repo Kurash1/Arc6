@@ -28,29 +28,15 @@ Arc6 is not intended to be used as a standalone language but as a foundational t
 - **A Text Editor or IDE**  
   You'll need a code editor to write Arc6 scripts.
 
-### Installation
-
-1. **Build or download the Arc6 compiler:**
-   - Detailed build instructions can be found in the [Build Guide]().
-   - Alternatively, download a pre-built version from the [releases page]().
-
-2. **Create an `Arc.Defines` file**  
-   Instructions can be found in the [Defines Guide](./Docs/Defines.md).
-
-3. **Compile your Arc6 project** by running the following command:
-
-   `arc6 ./arc.defines --format`
- 
-   This command will define, run, compile, and transpile all files as specified in `arc.defines`.
-    
-   And there you go! You have an Arc6 project set up. Every project needs a separate installation of the compiler to ensure that all developers always compile the same result.
-
 ## Documentation
 
-- [**Language Specification**](): Comprehensive guide to Arc6 syntax and semantics.
-- [**Compile-Time Operations**](): Details on the powerful compile-time features unique to Arc6.
-- [**Paradox Game Integration**](): Instructions for using Arc6 with various Paradox games.
-- [**Framework Development**](): How to create frameworks like Valley using Arc6.
+[**Getting Started**]()
+
+### Learning Arc6
+
+[**Overview of Arc6**]()
+[**Frequently Asked Questions (FAQ)**]()
+[**Discord**](https://discord.gg/xJpu8dgBC9)
 
 ## Contributing
 
