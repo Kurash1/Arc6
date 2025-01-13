@@ -28,21 +28,6 @@ Arc6 is not intended to be used as a standalone language but as a foundational t
 - **A Text Editor or IDE**  
   You'll need a code editor to write Arc6 scripts.
 
-## Documentation
-
-[**Getting Started**]()
-
-### Learning Arc6
-
-[**Overview of Arc6**]()
-
-[**Frequently Asked Questions (FAQ)**]()
+### More
 
 [**Discord**](https://discord.gg/xJpu8dgBC9)
-
-## Contributing
-
-Contributions to Arc6 are welcome! Please read our [Contributing Guide]() to get started.
-
-## License
-
