@@ -9,7 +9,11 @@ public enum TokenType
     OPERATOR,
     LITERAL
 }
+#pragma warning disable CS0660
+#pragma warning disable CS0661
 public struct Token : IPossibleVariable
+#pragma warning restore CS0661
+#pragma warning restore CS0660
 {
     public TokenType type;
     public string value;
