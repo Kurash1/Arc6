@@ -71,14 +71,22 @@ public struct Argument : IStatement
         this.value = value;
     }
 }
-public struct Call : IStatement
+public struct FunctionCall : IStatement
 {
     public Token name;
     public List<Argument> arguments;
 
-    public Call(Token name, List<Argument> arguments)
+    public FunctionCall(Token name, List<Argument> arguments)
     {
         this.name = name;
         this.arguments = arguments;
+    }
+}
+public struct VariableCall : IStatement
+{
+    public Token name;
+    public VariableCall(Token name)
+    {
+        this.name = name;
     }
 }

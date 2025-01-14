@@ -6,7 +6,9 @@ func<trigger> is_human(string name) = {
 
 func<trigger> is_human_race() = {
 	any {
-		
+		test_a
+		test_b
+		test_c
 	}
 }
 
@@ -14,12 +16,11 @@ func<trigger> has_advisor_of_level(advisor_type type, int level) = {
 	`{type = level}`
 }
 
-has_advisor_of_level(court_mage, 1)
-
 func<effect> add_adm_power(int amount) = auto
 func<effect> add_dip_power(int amount) = auto
 func<effect> add_mil_power(int amount) = auto
 
+f(a, b)
 f(x)
 f(a=1)
 f(1)

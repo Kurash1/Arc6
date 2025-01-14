@@ -20,7 +20,7 @@ public class Parser
 
         while (enumerator.MoveNext())
         {
-            
+            top:
             // Seperators
             if (Current == '{')
                 indent++;
@@ -42,12 +42,30 @@ public class Parser
             else if (Current.type == TokenType.IDENTIFIER)
             {
                 Token identifier = Current;
-                Token next = GetNext();
 
-                if (next == '(')
+                if (!TryMove())
                 {
-                    Call call = GetArguments(identifier);
+                    VariableCall call = new(identifier);
                     statements.Add(call);
+                }
+                else
+                {
+                    Token next = Current;
+
+                    // Function call
+                    if (next == '(')
+                    {
+                        FunctionCall call = GetArguments(identifier);
+                        statements.Add(call);
+                    }
+                    // Next is Unrelated, could be:
+                    // - A Variable
+                    else
+                    {
+                        VariableCall call = new(identifier);
+                        statements.Add(call);
+                        goto top;
+                    }
                 }
             }
 
@@ -59,14 +77,16 @@ public class Parser
         Block tree = new(statements);
         return tree;
     }
-    private Call GetArguments(Token identifier)
+    private FunctionCall GetArguments(Token identifier)
     {
         Assert("(");
-        ForceMove();
         List<Argument> arguments = [];
 
-        while (Current != ')')
+        do
         {
+            ForceMove();
+            if (Current == ')')
+                break;
             Token? first = null;
             IPossibleVariable second;
 
@@ -87,12 +107,9 @@ public class Parser
                 {
                     second = GetBlock();
                     ForceMove();
-                    goto end;
                 }
                 else
-                {
                     second = Current;
-                }
             }
             else
             {
@@ -103,10 +120,10 @@ public class Parser
         end:
             Argument argument = new(first, second);
             arguments.Add(argument);
-        }
+        } while (Current == ',');
 
 
-        return new Call(identifier, arguments);
+        return new FunctionCall(identifier, arguments);
     }
     private Scope KeywordScopes()
     {
@@ -161,5 +178,9 @@ public class Parser
     {
         if (!enumerator.MoveNext())
             throw new IndexOutOfRangeException();
+    }
+    bool TryMove()
+    {
+        return enumerator.MoveNext();
     }
 }
