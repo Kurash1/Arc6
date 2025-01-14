@@ -1,4 +1,5 @@
 ﻿using Arc6.Lexer;
+using Arc6.Compiler;
 using System.Collections.Generic;
 
 namespace Arc6.Parser;

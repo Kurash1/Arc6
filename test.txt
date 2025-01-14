@@ -1,10 +1,10 @@
-func<trigger> is_human(string name) = {
+func<trigger> f(string name) = {
 	any {
 		
 	}
 }
 
-func<trigger> is_human_race() = {
+func<trigger> f() = {
 	any {
 		test_a
 		test_b
@@ -12,13 +12,15 @@ func<trigger> is_human_race() = {
 	}
 }
 
-func<trigger> has_advisor_of_level(advisor_type type, int level) = {
-	`{type = level}`
+func<trigger> f(advisor_type type, int level) = {
+	
 }
 
-func<effect> add_adm_power(int amount) = auto
-func<effect> add_dip_power(int amount) = auto
-func<effect> add_mil_power(int amount) = auto
+func<effect> f(int amount) = auto
+func<effect> f(int amount) = auto
+func<effect> f(int amount) = auto
+
+ab:ce
 
 f(a, b)
 f(x)
