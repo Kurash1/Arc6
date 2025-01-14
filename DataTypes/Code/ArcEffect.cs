@@ -1,4 +1,6 @@
-﻿namespace Arc6.Types;
+﻿using Arc6.Compiler;
+
+namespace Arc6.Types;
 
 /// <summary>
 /// Represents a set of  instructions.
@@ -6,4 +8,9 @@
 class ArcEffect : Variable
 {
     List<ArcInstruction> Instructions;
+
+	public CodeReturn Compile()
+	{
+		throw new NotImplementedException();
+	}
 }

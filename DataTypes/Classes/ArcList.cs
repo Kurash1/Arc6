@@ -1,4 +1,6 @@
-﻿namespace Arc6.Types;
+﻿using Arc6.Compiler;
+
+namespace Arc6.Types;
 
 /// <summary>
 /// Represents a list of Variables.
@@ -7,4 +9,9 @@ public class ArcList : Variable
 {
     List<Variable> List;
     Type type;
+
+	public CodeReturn Compile()
+	{
+		throw new NotImplementedException();
+	}
 }

@@ -26,6 +26,17 @@ public class ScopeData
         throw new NotImplementedException();
     }
 }
+public class CodeReturn : List<string>
+{
+	public void Append(CodeReturn r)
+	{
+		foreach (string s in r)
+		{
+			this.Append(s);
+		}
+	}
+	public static implicit operator CodeReturn(string c) => [c];
+}
 public static class Compiler
 {
     public static ScopeData global = new();
@@ -33,7 +44,7 @@ public static class Compiler
     public static string Compile(Block code) => Compile(code, global);
     public static string Compile(Block code, ScopeData data)
     {
-        List<string> result = new();
+        CodeReturn result = new();
 
         foreach (IStatement statement in code.statements)
         {
@@ -59,7 +70,8 @@ public static class Compiler
             else if (statement is VariableCall variableCall)
             {
                 Variable variable = data.GetVariable(variableCall.locator);
-                throw new NotImplementedException();
+				CodeReturn res = variable.Compile();
+				result.Append(res);
             }
             else
             {

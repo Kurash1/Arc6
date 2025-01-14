@@ -1,4 +1,6 @@
-﻿namespace Arc6.Types;
+﻿using Arc6.Compiler;
+
+namespace Arc6.Types;
 
 /// <summary>
 /// Represents a set of conditions.
@@ -6,4 +8,9 @@
 class ArcTrigger : Variable
 {
     List<ArcCondition> Conditions;
+
+	public CodeReturn Compile()
+	{
+		throw new NotImplementedException();
+	}
 }

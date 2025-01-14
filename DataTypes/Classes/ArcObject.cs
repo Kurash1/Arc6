@@ -1,4 +1,6 @@
-﻿namespace Arc6.Types;
+﻿using Arc6.Compiler;
+
+namespace Arc6.Types;
 
 /// <summary>
 /// Represents a structured object.
@@ -7,7 +9,13 @@ public class ArcObject : Variable
 {
     Variable[] Variables;
     Blueprint blueprint;
-    public class Blueprint
+
+	public CodeReturn Compile()
+	{
+		throw new NotImplementedException();
+	}
+
+	public class Blueprint
     {
         string[] Keys;
         Type[] Types;
