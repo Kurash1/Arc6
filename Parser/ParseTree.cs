@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace Arc6.Parser;
 
-public struct Block
+public interface IPossibleVariable { }
+public struct Block : IPossibleVariable
 {
     public List<IStatement> statements;
 
@@ -62,9 +63,9 @@ public struct ArgumentDefinition
 public struct Argument : IStatement
 {
     public Token? id;
-    public Block value;
+    public IPossibleVariable value;
 
-    public Argument(Token? id, Block value)
+    public Argument(Token? id, IPossibleVariable value)
     {
         this.id = id;
         this.value = value;

@@ -46,7 +46,8 @@ public class Parser
 
                 if (next.Match("SEPERATOR:("))
                 {
-
+                    Call call = GetArguments(identifier);
+                    statements.Add(call);
                 }
             }
 
@@ -64,28 +65,44 @@ public class Parser
         ForceMove();
         List<Argument> arguments = [];
 
-        while (Current.value != ")")
+        while (Current != ')')
         {
-            if (Current.Match("SEPERATOR:{"))
+            Token? first = null;
+            IPossibleVariable second;
+
+            if (Current == '{')
             {
-                Block block = GetBlock();
+                second = GetBlock();
+                goto end;
             }
 
-            Token id = Current;
+            first = Current;
             ForceMove();
 
-            if (Current.Match("OPERATOR:="))
+            if (Current == '=')
             {
                 ForceMove();
-                Block block = GetBlock();
-                arguments.Add(new(id, block));
+
+                if (Current == '{')
+                {
+                    second = GetBlock();
+                    ForceMove();
+                    goto end;
+                }
+                else
+                {
+                    second = Current;
+                }
             }
-            else if (Current.Match("SEPERATOR:)"))
-                break;
             else
             {
-
+                second = first;
+                first = null;
             }
+
+        end:
+            Argument argument = new(first, second);
+            arguments.Add(argument);
         }
 
 

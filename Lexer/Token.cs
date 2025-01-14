@@ -1,4 +1,6 @@
-﻿namespace Arc6.Lexer;
+﻿using Arc6.Parser;
+
+namespace Arc6.Lexer;
 public enum TokenType
 {
     IDENTIFIER,
@@ -7,7 +9,7 @@ public enum TokenType
     OPERATOR,
     LITERAL
 }
-public struct Token
+public struct Token : IPossibleVariable
 {
     public TokenType type;
     public string value;
@@ -18,8 +20,12 @@ public struct Token
     }
     public bool Match(string match)
     {
-        string[] values = match.Split(':');
-        return type.ToString() == values[0] && value == values[1];
+        return match == $"{type}:{value}";
     }
     public override readonly string ToString() => value;
+
+    // The reason I don't allow strings to be used, is because this should only be used for common seperators or operators, otherwise you should be usinc the Match method.
+    public static bool operator ==(Token left, char right) => left.value == right.ToString();
+    public static bool operator !=(Token left, char right) => left.value != right.ToString();
+
 }

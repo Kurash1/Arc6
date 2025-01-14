@@ -10,3 +10,5 @@ foreach (Token token in tokens)
 }
 
 Block tree = new Parser(tokens).Analyze();
+
+return 0;
