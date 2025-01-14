@@ -45,7 +45,7 @@ public class Parser
 
                 if (!TryMove())
                 {
-                    VariableCall call = new(identifier);
+                    VariableCall call = new([identifier]);
                     statements.Add(call);
                 }
                 else
@@ -58,11 +58,23 @@ public class Parser
                         FunctionCall call = GetArguments(identifier);
                         statements.Add(call);
                     }
+                    // Variable Call
+                    else if (next == ':')
+                    {
+                        List<Token> locator = [identifier];
+                        while (Current == ':')
+                        {
+                            ForceMove();
+                            locator.Add(Current);
+                        }
+                        VariableCall call = new(locator);
+                        statements.Add(call);
+                    }
                     // Next is Unrelated, could be:
                     // - A Variable
                     else
                     {
-                        VariableCall call = new(identifier);
+                        VariableCall call = new([identifier]);
                         statements.Add(call);
                         goto top;
                     }

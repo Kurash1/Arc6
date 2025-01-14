@@ -60,7 +60,7 @@ public struct ArgumentDefinition
         this.id = id;
     }
 }
-public struct Argument : IStatement
+public struct Argument
 {
     public Token? id;
     public IPossibleVariable value;
@@ -84,9 +84,9 @@ public struct FunctionCall : IStatement
 }
 public struct VariableCall : IStatement
 {
-    public Token name;
-    public VariableCall(Token name)
+    public List<Token> locator;
+    public VariableCall(List<Token> name)
     {
-        this.name = name;
+        locator = name;
     }
 }
