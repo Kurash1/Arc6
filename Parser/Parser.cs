@@ -22,9 +22,9 @@ public class Parser
         {
             
             // Seperators
-            if (Current.Match("SEPERATOR:{"))
+            if (Current == '{')
                 indent++;
-            else if (Current.Match("SEPERATOR:}"))
+            else if (Current == '}')
                 indent--;
 
             // Keywords
@@ -44,7 +44,7 @@ public class Parser
                 Token identifier = Current;
                 Token next = GetNext();
 
-                if (next.Match("SEPERATOR:("))
+                if (next == '(')
                 {
                     Call call = GetArguments(identifier);
                     statements.Add(call);
